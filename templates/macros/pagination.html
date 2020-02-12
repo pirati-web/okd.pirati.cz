@@ -1,0 +1,15 @@
+{% macro render_pagination(pagination) %}
+  <div class="pagination">
+    {% if pagination.has_prev %}
+      <a href="{{ pagination.prev|url }}">&laquo; Novější</a>
+    {% else %}
+      <span class="disabled">&laquo; Novější</span>
+    {% endif %}
+    &nbsp;| {{ pagination.page }} |&nbsp;
+    {% if pagination.has_next %}
+      <a href="{{ pagination.next|url }}">Starší &raquo;</a>
+    {% else %}
+      <span class="disabled">Starší &raquo;</span>
+    {% endif %}
+  </div>
+{% endmacro %}
